@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #a6a6a6;
+    color: white;
+    background-color: #391846;
+}
+
+.no-display {
+    display: none !important;
+}
+
+.parallax {
+    background: linear-gradient(180deg, rgba(17,13,18,1) 0%, rgba(17,13,18,1) 70%, rgba(57,24,70,1) 100%);
+}
+
+.parallax-content {
+    display: flex;
+    justify-content: center;
+    height: 900px;
+    width: 100vw;
+    z-index: 1;
+}
+
+.parallax-content img {
+    position: absolute;
+    top: 0;
+    width: 1800px;
+    pointer-events: none;
+}
+
+.parallax-content img.branches {
+    top: -260px;
+}
+
+.parallax-content .title {
+    position: absolute;
+    font-size: 100px;
+    color: #e6e6e6;
+    text-shadow: 0px 4px 4px rgb(77, 77, 77);
+    top: 320px;
+}
+
+.control {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 100;
+    background-color: #391846;
+    text-align: center;
+}
+.control p {
+    padding-top: 1em;
+}
+
+/* CONTENT */
+
+main {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 100;
+    opacity: 1;
+    transition: all 1s linear;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.content {
+    width: 40%;
+    margin: 0 auto;
+    font-size: 2em;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.content h2 {
+    align-self: center;
+    margin-bottom: .5em;
+    margin-top: 1em;
+}
