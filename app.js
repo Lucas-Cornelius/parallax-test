@@ -9,6 +9,9 @@ const bigTrees = document.querySelector('.tree-zero');
 const treeOne = document.querySelector('.tree-one');
 const treeTwo = document.querySelector('.tree-two');
 
+const verificaTela = window.innerWidth<=1200;
+let jaFoi = false;
+
 document.addEventListener('scroll', () => {
     const value = window.scrollY;
     if (value<900) {
@@ -33,13 +36,18 @@ document.addEventListener('scroll', () => {
 
 });
 
-if(window.innerWidth<=1200) {
+if(verificaTela) {
     alteraDisplay();
 };
 
 function alteraDisplay() {
+    if (jaFoi) {
+        return;
+    }
+
     main.classList.toggle('hide');
     
     fullParallax.classList.toggle('no-display');
     control.classList.toggle('no-display');
+    jaFoi = true;
 };
