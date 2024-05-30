@@ -60,6 +60,7 @@ btn.addEventListener('click', () => {
 
 if(verificaTela) {
     alteraDisplay();
+    alert('Parallax effect works only for pc!');
 };
 
 function toggleDisplay() {
