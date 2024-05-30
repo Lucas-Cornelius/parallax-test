@@ -13,7 +13,9 @@ body {
 }
 
 .parallax {
-    background: linear-gradient(180deg, rgba(17,13,18,1) 0%, rgba(17,13,18,1) 70%, rgba(57,24,70,1) 100%);
+    background-color: rgba(17,13,18,1);
+    width: 100%;
+    height: 100vh;
 }
 
 .parallax-content {
@@ -27,12 +29,22 @@ body {
 .parallax-content img {
     position: absolute;
     top: 0;
-    width: 1800px;
+    width: 100vw;
     pointer-events: none;
 }
 
+.tree-two,
+.tree-one {
+    width: 90vw !important;
+}
+
+.floor,
+.branches {
+    width: 100vw !important;
+}
+
 .parallax-content img.branches {
-    top: -260px;
+    top: -32%;
 }
 
 .parallax-content .title {
@@ -46,9 +58,9 @@ body {
 .control {
     height: 100vh;
     width: 100vw;
+    background-color: #391846;
     position: relative;
     z-index: 100;
-    background-color: #391846;
     text-align: center;
 }
 .control p {
@@ -59,8 +71,8 @@ body {
 
 main {
     height: 100vh;
+    background: linear-gradient(180deg, rgba(17,13,18,1) 0%, rgba(17,13,18,1) 70%, rgba(57,24,70,1) 100%);
     width: 100vw;
-    background-color: #391846;
     position: relative;
     z-index: 100;
     opacity: 1;
