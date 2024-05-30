@@ -16,19 +16,20 @@ let jaFoi = false;
 
 document.addEventListener('scroll', () => {
     const value = window.scrollY;
-    if (value<900) {
-        treeOne.style.marginTop = value * .4 + 'px';
-        treeOne.style.marginLeft = value * .1 + 'px';
+    if (value<800) {
+        if (!(window.innerWidth<=1300)){
+            treeOne.style.marginLeft = value * .1 + 'px';
+            treeTwo.style.marginRight = value * .1 + 'px';
+        }
+
         treeOne.style.opacity = 1 - (value/1000);
     
-        treeTwo.style.marginTop = value * .4 + 'px';
-        treeTwo.style.marginRight = value * .1 + 'px';
         treeTwo.style.opacity = 1 - (value/1000);
     
         bigTrees.style.marginBottom = value * 1.1 + 'px';
         bigTrees.style.transform = `scale(${1 - (value * .0001)})`;
         
-        branches.style.marginTop = value * .6 + 'px';
+        branches.style.marginTop = value * .3 + 'px';
         
         screenWidthController(value);
         
@@ -46,12 +47,16 @@ document.addEventListener('scroll', () => {
 });
 
 function screenWidthController (value) {
-    if (value > 400) {
-        background.style.display = 'none';
+    if (value > 200) {
         title.style.display = 'none';
     } else {
-        background.style.display = 'block';
         title.style.display = 'block';
+    }
+
+    if (value > 400) {
+        background.style.display = 'none';
+    } else {
+        background.style.display = 'block';
     };
 
     if (value > 800) {
