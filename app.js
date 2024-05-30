@@ -1,6 +1,7 @@
 const fullParallax = document.querySelector('.parallax');
 const main = document.querySelector('main');
 const control = document.querySelector('.control');
+const btn = document.querySelector('.page-control');
 
 const background = document.querySelector('.background-moon');
 const title = document.querySelector('.title');
@@ -25,29 +26,59 @@ document.addEventListener('scroll', () => {
     
         branches.style.marginTop = value * .2 + 'px';
     
+        screenWidthController(value);
+
         background.style.marginTop = value * 1.8 + 'px';
         background.style.opacity = 1 - (value/400);
     
         title.style.marginTop = value * .7 + 'px';
         title.style.opacity = 1 - (value/800);
+        console.log(value)
     } else {
         alteraDisplay();
     };
+});
 
+function screenWidthController (value) {
+    if (value > 400) {
+        background.style.display = 'none';
+    } else {
+        background.style.display = 'block';
+    };
+
+    if (value > 800) {
+        bigTrees.style.display = 'none';
+    } else {
+        bigTrees.style.display = 'block';
+    };
+};
+
+btn.addEventListener('click', () => {
+    fullParallax.classList.toggle('no-display');
+    btn.classList.add('hide');
 });
 
 if(verificaTela) {
     alteraDisplay();
 };
 
+function toggleDisplay() {
+    fullParallax.classList.toggle('no-display');
+    control.classList.toggle('no-display');
+}
+
 function alteraDisplay() {
     if (jaFoi) {
         return;
-    }
+    };
 
     main.classList.toggle('hide');
+    if(!verificaTela) {
+        setTimeout(() => {
+            btn.classList.toggle('hide');
+        },1000);
+    }
     
-    fullParallax.classList.toggle('no-display');
-    control.classList.toggle('no-display');
+    toggleDisplay();
     jaFoi = true;
 };

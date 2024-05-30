@@ -60,14 +60,15 @@ body {
 main {
     height: 100vh;
     width: 100vw;
+    background-color: #391846;
     position: relative;
     z-index: 100;
     opacity: 1;
-    transition: all 1s linear;
+    transition: opacity 1s linear;
 }
 
 .hide {
-    opacity: 0;
+    opacity: 0 !important;
     pointer-events: none;
 }
 
@@ -85,4 +86,26 @@ main {
     align-self: center;
     margin-bottom: .5em;
     margin-top: 1em;
+}
+
+/* BUTTON */
+
+.page-control {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    right: 3%;
+    bottom: 5%;
+    border: none;
+    background-color: black;
+    border-radius: 40px 20px 40px 20px;
+    cursor: pointer;
+    padding: 1em;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 1s linear, background-color .2s linear;
+}
+
+.page-control:hover {
+    background-color: rgb(31, 8, 65);
 }
